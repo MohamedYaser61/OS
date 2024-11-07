@@ -1,0 +1,11 @@
+FROM openjdk:19-jdk-alpine3.16
+
+RUN apk add --no-cache openjdk11
+
+WORKDIR /app
+
+COPY MessagePassing.java .
+
+RUN javac MessagePassing.java
+
+CMD ["java", "MessagePassing"]
